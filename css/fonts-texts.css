@@ -1,0 +1,158 @@
+/******************************
+Estilos de la fuente
+
+    - Font-family -> Familias Tipograficas 
+    - Font-size -> Tamaño de fuente
+    - Font-weight -> Grosor de la tipografia
+    - Font-style -> Tipo de estilo de la tipografia
+    - Font-variant -> Variante de la fuente (todo el texto en mayusculas)
+    - Line-height -> Interlineado entre los parrafos
+    - Font -> Propiedad shorthand
+    font: Font-style Font-variant Font-weight Font-size / Line-height Font-family
+
+    OJO: En la medida de lo posible evitar este shorthand
+******************************/
+
+.font {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: italic;
+    font-variant: small-caps;
+    line-height: 1.5;
+    font: italic small-caps bold 24px / 1.5 monospace;
+}
+
+/******************************
+Formato Woff o Woff2 -> Web Open Font Format
+
+Formato para mandar a llamar una fuente desde el sistema operativo o la carpeta en donde esta la fuente
+
+Font-display: Es una propiedad de CSS de como es que queremos cargar una fuente personalizada
+
+    - auto -> Permite que el navegador utilice el metodo predeterminado que suele ser block
+    - block -> Oculta brevemente el texto hasta que la fuente haya sido descargada por completo - recomendada
+    - swap -> Indica al navegador que utilice la fuente alternativa para mostrar el texto hasta que la fuente personalizada se haya cargado por completo
+    - fallback -> Es una mezcla de auto y swap
+    - optional -> Ocultara el texto, luego lo cargara con la fuente alternativa y finalmente aplicara la fuente personalizada
+
+******************************/
+
+@font-face {
+    /* Definimos el nombre de la tipografia */
+    font-family: "Chalet";
+    /* LLamamos a la ruta del archivo tipografico */
+    /* src: url("../assets/Chalet.woff") format("woff"), url("../assets/Chalet.woff2") format("woff2"); */
+    src: url("../assets/Chalet.woff") format("woff");
+    font-display: block;
+}
+
+.chalet {
+    font-family: "Chalet",sans-serif;
+    font-size: 2rem;
+}
+
+@font-face {
+    font-family: "Pecita";
+    src: url("../assets/Pecita.woff") format("woff");
+    font-display: block;
+}
+
+.pecita {
+    font-family: "Pecita", cursive;
+    font-size: 2rem;
+}
+
+/******************************
+Fuentes traidas desde Google Fonts
+******************************/
+
+.raleway {
+    font-family: 'Raleway', sans-serif;
+}
+
+/******************************
+Propiedades del texto
+
+text-align -> Alineamos el texto: izquierda,derecha,centrado,justificado
+
+text-decoration -> Decoramos el texto: subrayado, sin subrayado
+
+text-indent -> Le damos sangria al codigo
+
+text-overflow -> Si el texto no alcanza creara puntos suspensivos
+    para que text-overflow funcione se deben usar estar 2 propiedades
+    overflow: hidden;
+    white-space: nowrap;
+
+text-transform -> Nos sirve para capitalizar el texto
+
+letter-spacing -> Espaciado entre el texto
+
+white-space -> Que hacemos con los espacios en blanco
+
+writing-mode
+
+work-break -> Rompe el texto
+
+word-spacing -> Separacion entre palabras
+
+writing-mode -> Modo de escritura en horizontal o vertical
+******************************/
+
+.text {
+    background-color: blanchedalmond;
+    border: thin solid black;
+    padding: 1rem;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 2rem;
+    text-align: left;
+    text-decoration: none;
+    text-indent: 3rem;
+    text-overflow: ellipsis;
+    text-transform: capitalize;
+    letter-spacing: .5rem;
+    word-break: break-all;
+    writing-mode: vertical-lr;
+}
+
+.white-space{ 
+    white-space: pre;
+}
+
+.word-spacing {
+    font-size: 2rem;
+    word-spacing: 1rem;
+}
+
+/******************************
+Iconos de Google
+******************************/
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+}

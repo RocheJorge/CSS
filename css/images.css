@@ -1,0 +1,24 @@
+/* 
+Buena practica del estilo de reseteo para las imagenes y hacerlas responsivas
+*/
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card {
+    border: medium solid black;
+    width: 400px;
+    height: 400px;
+}
+
+.card img {
+    height: 300px;
+    object-fit: fill; /* valor por defecto */
+    object-fit: cover;
+    object-fit: contain;
+    object-position: left top;
+    object-position: left top;
+    object-position: 50% 50%;
+}

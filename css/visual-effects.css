@@ -1,0 +1,310 @@
+/*****************************
+Sombras
+*****************************/
+
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+.box {
+    border: thick solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    width: 200px;
+    height: 200px;
+}
+
+.shadows {
+    color: navy;
+    font-size: 2rem;
+    text-align: center;
+    /* box-shadow: mov-x mov-y radius-blur spread-blur color inset/outset; */
+    box-shadow: 1rem 1rem 1rem 1rem #000;
+    box-shadow: -1rem -1rem 1rem 1rem #000;
+    box-shadow: 1rem 1rem 1rem 1rem #0005;
+    box-shadow: 1rem 1rem 1rem 1rem #f00 inset;
+    box-shadow: 1rem 1rem 2rem .5rem #0007;
+    /* text-shadow: mov-x mov-y radius-blur color; */
+    text-shadow: -1rem -1rem 0.5rem hotpink;
+}
+
+.shadows-multiple {
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 1rem 1rem 1rem 1rem #f00 inset, -1rem -1rem 1rem 1rem #000;
+    text-shadow: 1rem 1rem 1rem 1rem #f00 inset, -1rem -1rem 1rem 1rem #000;
+}
+
+/* filtros */
+
+.drop-shadow {
+    width: 600px;
+    height: auto;
+}
+
+.drop-shadow img {
+    max-width: 100%;
+    height: auto;
+    /* filter: drop-shadow(mov-x mov-y blur-radius color); */
+    /* box-shadow: 1rem 1rem 1rem 1rem #f00; */
+    filter: drop-shadow(1rem 1rem 1rem red);
+}
+
+/*****************************
+Degradados
+cssgradient.io
+*****************************/
+
+/* lineales */
+
+.linear-gradient {
+    background-image: linear-gradient(red, green, blue);
+    background-image: linear-gradient(0deg, red, green, blue);
+    background-image: linear-gradient(20deg, red, green, blue);
+    background-image: linear-gradient(90deg, red, green, blue);
+    background-image: linear-gradient(180deg, red, green, blue);
+    background-image: linear-gradient(270deg, red, green, blue);
+    background-image: linear-gradient(to top right, red, green, blue);
+    background-image: linear-gradient(to top left, red, green, blue);
+    background-image: linear-gradient(90deg, red 30%, green 60%, blue);
+    background-image: linear-gradient(90deg, green 33%, white 34% 67%, red 68%);
+}
+
+/* Radiales */
+
+.radial-gradient {
+    background-image: radial-gradient(cyan,magenta);
+    background-image: radial-gradient(circle 2rem,cyan,magenta,yellow);
+    background-image: radial-gradient(circle 4rem,cyan 30%,magenta 80%,yellow);
+    background-image: radial-gradient(
+        circle 100px,
+        cyan 30%,
+        magenta 60%,
+        yellow 90%
+        );
+
+    background-image: radial-gradient(
+        circle 100px at top left,
+        cyan 30%,
+        magenta 60%,
+        yellow 90%
+        );
+}
+
+/* Conico */
+
+.conic-gradient {
+    background-image: conic-gradient(red,green,blue);
+    background-image: conic-gradient(red 0% 50%,green 60%,blue 80%);
+}
+
+/* Repetir Degradados */
+
+.repeat-gradient-linear {
+    background-image: repeating-linear-gradient(90deg,red 0 10px, green 10px 20px, blue 20px 30px);
+}
+
+.repeat-gradient-radial {
+    background-image: repeating-radial-gradient(circle 4rem, cyan 0 10px, magenta 10px 20px, yellow 20px 30px);
+}
+
+.repeat-gradient-conic {
+    background-image: repeating-conic-gradient(red 0 8%, yellow 8% 16%, black);
+}
+
+/* Graficas */
+
+.chart-gradient {
+    background-image: conic-gradient(cyan 0% 50%, magenta 50% 80%, yellow 80%);
+    border-radius: 50%;
+}
+
+.donut-gradient {
+    background-image: radial-gradient(white 30%, black 31%, transparent 40%), conic-gradient(cyan 0% 50%, magenta 50% 80%, yellow 80%);
+    border-radius: 50%;
+}
+
+/* Filtros */
+
+.card {
+    border: thin solid black;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5rem;
+    width: 600px;
+    height: 400px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 50%;
+    /* filter: blur(.15rem);
+    filter: brightness(.75);
+    filter: contrast(1);
+    filter: grayscale(.35);
+    filter: sepia(.35);
+    filter: hue-rotate(0deg);
+    filter: invert(.75);
+    filter: opacity(1);
+    filter: saturate(1); */
+}
+
+.filters-multiple {
+    filter: blur(.1rem) hue-rotate(270deg) opacity(.75) invert(.75);
+}
+
+/******************************
+Filtros a Fondos como una card
+******************************/
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.backdrop-filter,
+.backdrop-filter-multiple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.backdrop-filter h4 {
+    border-radius: 3rem;
+    padding: 2rem;
+    font-size: 3rem;
+    background-color: rgba(255, 102, 255, .5);
+    backdrop-filter: grayscale(1);
+    color: #fff;
+    backdrop-filter: blur(.5rem);
+}
+
+.backdrop-filter-multiple h4 {
+    border-radius: 1rem;
+    padding: 2rem;
+    font-size: 3rem;
+    color: #fff;
+    background-color: rgba(255, 102, 255, .5);
+    backdrop-filter: blur(1rem) hue-rotate(240deg) opacity(.5);
+}
+
+.dark-mode {
+    background-color: #fff;
+    color: #000;
+    filter: invert(1);
+}
+
+.dark-mode img {
+    filter: invert(1);
+}
+
+/******************************
+Modos de Mezcla -> Solo se usa con 2 imagenes una encima de otra
+******************************/
+
+.blend-modes img {
+    mix-blend-mode: normal; /* Default */
+    /* mix-blend-mode: color;
+    mix-blend-mode: color-dodge;
+    mix-blend-mode: color-burn;
+    mix-blend-mode: screen;
+    mix-blend-mode: multiply;
+    mix-blend-mode: saturation;
+    mix-blend-mode: luminosity; */
+    mix-blend-mode: darken;
+}
+
+/* 
+Modos de Mezcla para 1 sola imagen
+*/
+
+.bg-blend-modes {
+    background-image: url("../assets/puesta-sol.jpg"), url("../assets/BuenosDias.jpg");
+    background-size: cover;
+    background-blend-mode: darken;
+}
+
+/* 
+Efecto de enmascaramiento o de mascara
+clip-path generator.com
+*/
+
+.clip-path {
+    clip-path: circle();
+    clip-path: circle(2rem);
+    clip-path: circle(100px);
+    clip-path: circle(100px at top);
+    clip-path: circle(100px at bottom);
+    clip-path: circle(100px at right bottom);
+    clip-path: circle(100px at right top);
+    clip-path: ellipse();
+    clip-path: inset(2rem);
+    clip-path: inset(1rem round 1rem 2rem 3rem);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+/****************************** 
+Formas
+******************************/
+
+.shapes {
+    border: thick solid black;
+    padding: 1rem;
+    margin: 0 auto 5rem;
+    max-width: 800px;
+    font-size: 1.25rem;
+}
+
+.shapes img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: 0 50%;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.shape-1 {
+    margin: 4rem 2rem;
+    shape-outside: circle();
+    shape-outside: ellipse();
+    shape-outside: polygon();
+}
+
+.shape-2 {
+    margin: 4rem 0 4rem 2rem;
+    shape-outside: ellipse();
+}
+
+.shape-3 {
+    margin: 2rem 2rem 0 0;
+}

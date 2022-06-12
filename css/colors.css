@@ -1,0 +1,103 @@
+/**************************
+Color por nombre
+**************************/
+
+.color-by-name {
+    background-color: coral;
+    color: rebeccapurple;
+    border: thick solid greenyellow;
+}
+
+/**************************
+Sistema Hexadecimal
+0123456789ABCDEF
+
+RGB -> Red Green Blue(Medios Digitales) 
+vs 
+CMYK -> Cyan Magenta Yellow Key(Medios Impresos)
+
+Colores en HEX va ser colores de 6 digitos
+#FF6600
+**************************/
+
+.color-hex {
+    background-color: #FF6600;
+    /* opacidad son los dos ultimos digitos, en este caso a 50% */
+    background-color: #FF660050;
+    color: rebeccapurple;
+    border: thick solid greenyellow;
+}
+
+/**************************
+Sistema RGB
+
+Acepta 8 bits por canal
+Bit(0/1) 2 elevado a la potencia 8=256
+Por cada canal de color tenemos valores que van del 0 - 255
+**************************/
+
+.color-rgb {
+    background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    background-color: rgb(0, 255, 0);
+    background-color: rgb(0, 0, 255);
+    /* para la opacidad se usa el rgba con numeros decimales: 0.56 */
+    background-color: rgba(0, 0, 0, .5);
+    color: rgb(255, 102, 0);
+    border: thick solid greenyellow;
+}
+
+/**************************
+HSL -> Hue Saturation Lightness (Tono-Saturacion-Luminosidad)
+
+El primer es Hue (Circulo Cromatico)
+0° -> Red
+60° -> Yellow
+120° -> Green
+240° -> Blue
+360° -> Magenta
+
+El segundo valor es la saturacion (es la intensidad del color)
+0% -> Escala de Grises
+100% -> Color puro
+
+El tercer valor es la luminosidad del color
+
+0% -> Negro
+100% -> Blanco
+**************************/
+
+.color-hsl {
+    background-color: hsl(0, 100%, 50%);
+    color: rebeccapurple;
+    border: thick solid greenyellow;
+}
+
+/**************************
+Valor Transparent: Color transparente es igual a aplicar rgba(0,0,0,0)
+
+Valor currentColor: Hereda el valor por defecto o asignado de la propiedad color, del ancestro que tenga definida esta propiedad, busca del ancestro mas cercano al mas alejado
+**************************/
+
+.color-transparent-current {
+    background-color: darkmagenta;
+    background-color: transparent;
+    background-color: currentColor;
+    color: orangered;
+}
+
+/**************************
+La propiedad opacity aplica la opacidad
+**************************/
+
+.opacity {
+    background-color: orchid;
+    color: navy;
+    border: thick solid black;
+    /* se aplicara a toda la caja */
+    opacity: .7;
+}
+
+.opacity-10 {
+    opacity: .1;
+}

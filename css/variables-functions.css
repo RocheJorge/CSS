@@ -1,0 +1,84 @@
+/*****************************
+Variables
+*****************************/
+
+/* 
+Si deseamos crear varaibles para todo el documento html usamos la pseudoclase :root
+*/
+
+:root {
+   --default-bg-color: skyblue; 
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* 
+Las variables tienen un alcance
+*/
+
+.custom-props-1 {
+    --primary-color: gray;
+    --font-size: 32px;
+    background-color: var(--primary-color);
+}
+
+.custom-props-2 {
+    background-color: var(--default-bg-color);
+}
+
+.custom-props-3 {
+    font-size: var(--font-size);
+}
+
+.title-props {
+    --primary-color: navy;
+    color: var(--primary-color, orange);
+    background-color: var(--default-bg-color);
+}
+
+/*****************************
+Funciones
+*****************************/
+
+/* 
+Funcion calc() -> Realiza operaciones aritmeticas
+*/
+
+.ch-10 {
+    --padding-size: 2ch;
+    --num-ch: 10ch;
+    background-color: var(--default-bg-color);
+    font-size: 2rem;
+    padding: var(--padding-size);
+    /* funcion calcular
+    OJO: cuando se hacen calculos se deja un espacio en blanco entre cada operacion porque si no dara un error
+    */
+    width: calc(var(--num-ch) + var(--padding-size)*2);
+}
+
+/* 
+Funcion min - max
+*/
+
+.min-max {
+    background-color: var(--default-bg-color);
+    margin-top: 1rem;
+    width: min(300px, 20vw);
+    height: max(200px, 25vh);
+}
+
+/* 
+Funcion clamp() -> Se usa mas que todo para el responsive design
+*/
+
+h1 {
+    font-size: clamp(2rem, 1rem + 3vw, 3rem);
+}

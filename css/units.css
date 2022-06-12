@@ -1,0 +1,150 @@
+/* 
+Unidades de medida
+1) Absolutas: (Su valor no cambia, son unidades del mundo real)
+    pc, cm, mm, in, Q
+    pt (1/72in)
+    px (1/96in)
+
+2) Relativas (Su valor es relativo al contexto)
+    em, rem, ex, ch - al tamaño de la fuente
+        em -> basada en la anchura de la "m" de la fuente del elemento
+        rem -> basada en la anchura de la "m" de la fuente del elemento raiz (html)
+        ex -> basada en la altura de la "x" de la fuente del elemento
+        ch -> basada en la anchura "0" de la fuente del elemento
+    
+    % -> al tamaño del contenedor
+    
+    vw, vh, vmin, vmax -> al tamaño del viewport
+        vw -> ancho del viewport, van de 1 a 100
+        vh -> alto del viewport, van de 1 a 100
+        vmax -> entre vw y vh toma el que tenga el mayor valor
+        vmin -> entre vw y vh toma el que tenga el menor valor
+
+conversiones entre unidades -> http://pxtoem.com/
+*/
+
+/* 
+Propiedades de paul irish
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.pixels {
+    background-color: cadetblue;
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    font-size: 16px;
+    border: thick solid rebeccapurple;
+}
+
+/* 
+Em va a tomar los pixeles que tienen el contenedor padre del elemento
+*/
+.ems {
+    background-color: cadetblue;
+    font-size: 1.5em;
+    border: thick solid rebeccapurple;
+}
+
+/* 
+Rem siempre va a tomar el tamaño de fuente del root es decir del html, si no se define siempre va a ser de 16px
+*/
+.rems {
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1rem 0.5rem;
+    border: 5px solid rebeccapurple;
+}
+
+.rem-child {
+    background-color: salmon;
+    border: thick solid beige;
+    margin: 0.5rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+
+/* 
+Exs definen altura (No son utilizados)
+*/
+.exs {
+    background-color: cadetblue;
+    font-size: 24px;
+    padding: 1ex 0.5ex;
+    border: 5px solid rebeccapurple;
+}
+
+.ex-child {
+    background-color: salmon;
+    border: thick solid beige;
+    margin: 0.5ex;
+    padding: 1ex;
+    font-size: 2ex;
+}
+
+/* 
+CHS mas que todo se usa para los botones y ocupa la dimension exactamente que se va a usar, puede funcionar en formularios, diseño de editoriales
+*/
+.chs {
+    background-color: cadetblue;
+    /* esta cubriendo 10 caracteres exactamente */
+    width: 10ch;
+}
+
+/* 
+Porcentajes
+*/
+
+.percentages {
+    background-color: darkkhaki;
+    padding: 5%;
+    margin: 20% 10%;
+    width: 80%;
+    font-size: 100%;
+}
+
+.height-parent {
+    background-color: brown;
+    width: 500px;
+    height: 500px;
+}
+
+.height-child {
+    background-color: coral;
+    /* toma el 50% del contenedor padre, en este caso del height parent */
+    width: 50%;
+    height: 50%;
+}
+
+/* 
+Viewport ocupara todo el ancho y alto de la pantalla
+*/
+
+.viewport {
+    /* recuerda que la etiqueta body tiene margenes por defecto y recuerda que las barras de scroll del navegador tambien forman parte del viewport */
+    background-color: darkcyan;
+    width: 100%;
+    width: 100vw;
+    width: 100vw;
+    height: 50vh;
+    height: 100vh;
+    font-size: 5vw;
+    padding: 2vh 2vw;
+}
+
+.vmin, 
+.vmax {
+    background-color: darksalmon;
+    border: thick solid cyan;
+    width: 50vmax;
+    height: 50vmin;
+}
